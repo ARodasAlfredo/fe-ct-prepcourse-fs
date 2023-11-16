@@ -114,11 +114,8 @@ function estaEnRango(num) {
 }
 
 function esEntero(num) {
-   if (Number.isInteger(num)) {
-      return true;
-   } else {
-      return false;
-   }
+   if (num % 1 === 0) return true;
+   else return false
    // Retornar true si "num" es un entero, ya sea positivo, negativo o cero.
    // Ejemplo: 0.8   ---> false
    // Ejemplo: 1     ---> true
@@ -156,6 +153,20 @@ function operadoresLogicos(num1, num2, num3) {
       return num3;
    } else {
       return false;
+      // OTHER SOLUTION
+      // switch (true) {
+      //    case num1 < 0 || num2 < 0 || num3 < 0:
+      //       return 'Hay negativos';
+      //    case num1 === 0 && num2 === 0 && num3 === 0:
+      //       return 'Error';
+      //    case num1 > num2 && num1 > num3 && num1 > 0:
+      //       return "Numero 1 es mayor y positivo";
+      //    case num3 > num1 && num3 > num2:
+      //       num3 = num3 + 1;
+      //       return num3;
+      //    default:
+      //       return false;
+      // }
    }
    // La función recibe tres números distintos.
    // Si num1 es mayor a num2 y a num3, y además es positivo, retornar ---> "Numero 1 es mayor y positivo".
@@ -167,32 +178,34 @@ function operadoresLogicos(num1, num2, num3) {
 }
 
 function esPrimo(num) {
-   if (num <= 1) {
-      return false;
-   }
-   for (let i = 2; i <= num / 2; i++) {
-      if (num % i === 0) {
-         return false;
-      }
-   }
-   return true;
+
    // Retornar true si "num" es primo.
    // De lo contrario retorna false.
    // [Pista 1]: un número primo sólo es divisible por sí mismo y por 1.
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
+   if (num <= 1) {
+      return false;
+   };
+   for (let i = 2; i <= num / 2; i++) {
+      if (num % i === 0) {
+         return false;
+      }
+   }
+   return true;
 }
 
 function esVerdadero(valor) {
+
+   // Si "valor" es verdadero retornar "Soy verdadero".
+   // Caso contrario, retornar "Soy falso".
+   // Tu código:
    if (valor) {
       return "Soy verdadero";
    } else {
       return "Soy falso";
-   }
-   // Si "valor" es verdadero retornar "Soy verdadero".
-   // Caso contrario, retornar "Soy falso".
-   // Tu código:
+   };
 }
 
 function tieneTresDigitos(num) {
@@ -207,7 +220,7 @@ function tieneTresDigitos(num) {
 }
 
 function doWhile(num) {
-   let i = 0
+   let i = 0;
    do {
       num += 5;
       i++;

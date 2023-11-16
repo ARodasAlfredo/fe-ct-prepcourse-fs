@@ -1,6 +1,14 @@
 /*⚠️ NO MODIFIQUES EL NOMBRE DE LAS DECLARACIONES ⚠️*/
 
 function crearGato(nombre, edad) {
+   var gato = {
+      nombre: nombre,
+      edad: edad,
+      meow: function() {
+         return 'Meow!'
+      }
+   }
+   return (gato);
    // Debes crear un nuevo objeto con las propiedades "nombre" y "edad".
    // Ambas propiedades deben tener el valor correspondiente recibido por parámetro.
    // Además, agregar una propiedad con el nombre "meow".
@@ -10,6 +18,11 @@ function crearGato(nombre, edad) {
 }
 
 function nuevoUsuario(nombre, email, password) {
+   var usuario = {};
+   usuario.nombre = nombre;
+   usuario.email = email;
+   usuario.password = password;
+   return (usuario);
    // Debes crear un nuevo objeto.
    // Este debe tener las propiedades: "nombre", "email" y "password" con sus respectivos valores.
    // Retornar el objeto.
@@ -17,6 +30,8 @@ function nuevoUsuario(nombre, email, password) {
 }
 
 function agregarPropiedad(objeto, propiedad) {
+   objeto[propiedad] = null;
+   return objeto;
    // Recibirás un objeto por parámetro.
    // Debes agregarle una propiedad con el nombre recibido por parámetro.
    // Esta propiedad será igual al valor `null`.
@@ -25,6 +40,7 @@ function agregarPropiedad(objeto, propiedad) {
 }
 
 function invocarMetodo(objeto, metodo) {
+   objeto[metodo]();
    // El parámetro "metodo" es un string que coincide con el nombre de una propiedad del objeto recibido.
    // Esta propiedad contiene una función en su interior. Debes invocarla/ejecutarla.
    // [NOTA]: no necesitar retornar nada.
@@ -32,6 +48,8 @@ function invocarMetodo(objeto, metodo) {
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
+   var resultado = objetoMisterioso.numeroMisterioso * 5;
+   return resultado
    // El parámetro "objetoMisterioso" posee una propiedad con el nombre "numeroMisterioso".
    // Debes multiplicar este número por 5 y retornar el resultado.
    // Tu código:
